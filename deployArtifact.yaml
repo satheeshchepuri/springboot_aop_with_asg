@@ -1,0 +1,26 @@
+---
+-
+  hosts: all
+  tasks:
+    -
+      name: "uninstall Java JRE rpm from a local file"
+      yum:
+        name: "*java*"
+        state: absent
+    -
+      name: "install Java JRE rpm from a local file"
+      yum:
+        name: "java-1.8.0*"
+        state: present
+    -
+      name: "Deploy artifact from nexus repo"
+      get_url:
+        url: "http://172.31.30.103:8081/nexus/content/repositories/maven_spring_boot/com/spring-boot-aop/0.0.1/spring-boot-aop-0.0.1.jar"
+        dest: /tmp/.
+        url_username: admin
+        url_password: admin123
+   
+      
+    -
+      name: "Run Artifact"
+      shell: nohup java -jar /tmp/spring-boot-aop-0.0.1-SNAPSHOT.jar &
