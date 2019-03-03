@@ -5,7 +5,7 @@ stages{
       steps {
         //node('Ansible'){
          checkout scm
-         ansiblePlaybook playbook: '$WORKSPACE/autoscale_ec2.yaml'
+         ansiblePlaybook playbook: '$WORKSPACE/createInstance.yaml'
       //}
       }}
   }
