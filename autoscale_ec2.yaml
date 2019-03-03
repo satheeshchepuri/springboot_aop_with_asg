@@ -26,7 +26,7 @@
     - name: create autoscaling groups
       ec2_asg:
         name: myasg
-        launch_config_name: new_lc2
+        launch_config_name: new_lc
         target_group_arns: arn:aws:elasticloadbalancing:us-west-2:990456062402:targetgroup/alb-target-group/35a57f0d3edc3d97
         health_check_period: 500
         health_check_type: EC2
