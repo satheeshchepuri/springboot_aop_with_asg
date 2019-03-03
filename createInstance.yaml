@@ -12,7 +12,7 @@
     - name: Launch instance
       ec2:
          key_name: "{{ keypair }}"
-         group_id: sg-033da3e1e23206c4f
+         group_id: sg-03269f1b3b216a9aa
          instance_type: "{{ instance_type }}"
          image: "{{ image }}"
          instance_tags:
