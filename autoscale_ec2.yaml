@@ -6,7 +6,7 @@
     vars:
       keypair: mykeypair1
       instance_type: t2.micro
-      image: ami-095cd038eef3e5074
+      image: ami-0f54a2f7d2e9c88b3
       region: us-west-2
     tasks:
     - name: create Launch conf
