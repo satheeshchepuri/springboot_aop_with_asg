@@ -4,22 +4,22 @@
     connection: local
     gather_facts: False
     vars:
-      keypair: practice-keys
+      keypair: mykeypair1
       instance_type: t2.micro
-      image: ami-0ad42f4f66f6c1cc9
-      region: ap-south-1
+      image: ami-095cd038eef3e5074
+      region: us-west-2
     tasks:
     - name: Launch instance
       ec2:
          key_name: "{{ keypair }}"
-         group_id: sg-0f662324d42939014
+         group_id: sg-00336de53d454b90a
          instance_type: "{{ instance_type }}"
          image: "{{ image }}"
          wait: true
          instance_tags:
             Name: Dev
          region: "{{ region }}"
-         vpc_subnet_id: subnet-0214c74821552fb85
+         vpc_subnet_id: subnet-01ed672c687b60c20
          instance_profile_name: s3-mybucket-role
          assign_public_ip: yes
       register: ec2
